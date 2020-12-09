@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="../daftar&masuk/masuk.js"></script> -->
+</head>
+<body class="body">
+    <nav class="navbar">
+        <div class="container">
+            <div class="navigation" style="background-color: white;">
+                <a style="color: black;" href="">Beranda</a>
+                <a style="color: black;" href="">Mulai Menanam</a>
+                <a style="color: black;" href="">Lapak</a>
+                <a style="color: black;" href="">Cara Kerja</a>
+                <a class="button" href="">Daftar</a>
+            </div >
+            <div class="logo">
+                <a href=""><img src="../logo_web.png" alt=""></a>
+            </div>
+            </div>
+        </div>
+    </nav>
+    <div class="gambar">
+        <img src="../logo_web.png" alt="">
+    </div>
+    <div class="tengah">
+        <div class="kotak">
+            <div class="kotak2">
+                <div class="atas">
+                    <a style="text-decoration: none;" href=""><h3>DAFTAR</h3></a>
+                    <a style="text-decoration: none;" href=""><h3 style="color: greenyellow;">MASUK</h3></a>
+                </div>
+                <div class="daftar">
+                    <form id="form" class="anying" name="biodata" action="">
+                        <input name="username" type="text" placeholder="Username">
+                        <input name="password" type="password" placeholder="Password">
+                        <button class="tombol" type="submit" data-toggle="modal">MASUK</button>
+                        <div class="modal invalid">Invalid username or password</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal sukses">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Success
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let formLogin = document.getElementById("form")
+            formLogin.addEventListener("click", function(e){
+                e.preventDefault()
+            });
+
+        let button = document.querySelector('button [data-toggle="modal"]');
+        let body =  document.getElementsByClassName('body');
+        let suksesModal = document.querySelector('.sukses');
+        let invalidModal = document.querySelector('.invalid');
+
+        button.addEventListener('click', function() {
+            let username = document.forms["login"]["username"].value;
+            let password = document.forms["login"]["password"].value;
+
+            if (username == "pweb_C" && password == "123123"){
+                suksesModal.classList.add('show');
+                invalidModal.classList.remove('show');
+                body.style.backgroundColor = "green"
+            }
+            else {
+                invalidModal.classList.add('show')
+                body.style.backgroundColor = "white"
+            }
+        });
+
+        suksesModal.addEventListener('click', function() {
+            this.classList.remove('show');
+
+        });
+
+    </script>
+</body>
+</html>
