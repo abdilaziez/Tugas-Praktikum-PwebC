@@ -60,14 +60,14 @@
                 e.preventDefault()
             });
 
-        let button = document.querySelector('button [data-toggle="modal"]');
+        let button = document.querySelector('button[data-toggle="modal"]');
         let body =  document.getElementsByClassName('body');
         let suksesModal = document.querySelector('.sukses');
         let invalidModal = document.querySelector('.invalid');
 
         button.addEventListener('click', function() {
-            let username = document.forms["login"]["username"].value;
-            let password = document.forms["login"]["password"].value;
+            let username = document.forms["biodata"]["username"].value;
+            let password = document.forms["biodata"]["password"].value;
 
             if (username == "pweb_C" && password == "123123"){
                 suksesModal.classList.add('show');
